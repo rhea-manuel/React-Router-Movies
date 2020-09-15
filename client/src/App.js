@@ -16,11 +16,7 @@ export default function App() {
       axios
         .get('http://localhost:5000/api/movies') // Study this endpoint with Postman
         .then(response => {
-          console.log(response.data)
           setMovieList(response.data)
-          // console.log(movieList)
-          // Study this response with a breakpoint or log statements
-          // and set the response data as the 'movieList' slice of state
         })
         .catch(error => {
           console.error('Server Error', error);
@@ -38,9 +34,6 @@ export default function App() {
       <SavedList list={[ /* This is stretch */]} />
 
 
-      <div>Replace this Div with your Routes</div>
-
-
       <Switch>
 
         <Route path="/movies/:id">
@@ -54,15 +47,6 @@ export default function App() {
 
 
       </Switch>
-      {/* <Switch>
-
-      </Switch> */}
-      {/* <Switch> */}
-      {/* <Route path="/movie/:id"></Route> */}
-      {/* <Movie id={0}></Movie> */}
-      {/* </Switch> */}
-
-      {/* <Route path="/" ></Route> */}
     </div>
   );
 }
